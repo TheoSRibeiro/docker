@@ -15,3 +15,8 @@ versao_completa: 3.15
 #strings
 string_sem_aspas: String sem string_sem_aspas
 texto: "Este texto eh valido para o YAML"
+
+#Dados nulos
+nulo: ~
+nulo2: null
+nulo3: 
