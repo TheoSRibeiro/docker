@@ -129,3 +129,20 @@ capturar imagem do docker hub (PULL)
 inserir tag
 > docker build -t theosribeiro92/nodeteste:novaversao .
 > docker push theosribeiro92/nodeteste:novaversao
+
+######### VOLUMES ANONIMOS #########
+
+salvar dados no volume anonimo
+> docker run -v /data
+> docker run -d -p 80:80 --name phpmessages_container --rm -v /data phpmessages 
+
+visualizar volumes
+> docker volume ls
+
+volumes nomeados
+> docker run -v nodeVolume:/data
+> docker run -d -p 80:80 --name phpmessages_container -v phpvolume:/var/www/html/messages --rm phpmessages
+
+volume blind mounts, aponta para diretorio host
+> docker run /dir/data:/data
+> docker run -d -p 80:80 --name phpmessages_container -v D:\Documentos\cursos\docker\2_volumes\messages:/var/www/html/messages --rm phpmessages
