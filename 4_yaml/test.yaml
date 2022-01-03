@@ -35,3 +35,11 @@ lista2:
  - 3
  - teste
  - "outro teste"
+
+#Dicionarios
+obj: {a: 1, b: 2, c: 3, objeto_interno: {a: "um"}}
+objeto:
+a: 1
+b: "dois"
+objeto_interno:
+  x: 2
