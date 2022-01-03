@@ -20,3 +20,9 @@ texto: "Este texto eh valido para o YAML"
 nulo: ~
 nulo2: null
 nulo3: 
+
+#Booleanos
+verdadeiro: True
+verdadeiro2: On
+falso: False
+falso2: off
