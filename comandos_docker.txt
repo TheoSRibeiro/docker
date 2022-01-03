@@ -208,3 +208,12 @@ build da flaskapinetwork
 rodar o container do flask:
 > docker run -d -p 5000:5000 --name flask_api_container --rm --network flasknetwork flaskapinetwork
 
+
+conectar um container a uma rede manualmente
+> docker network connect <nome_rede> <container_id>
+
+desconectar um container a uma rede manualmente
+> docker network disconnect <rede> <container>
+
+inspecionar redes
+> docker network inspect <nome>
