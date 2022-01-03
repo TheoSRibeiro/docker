@@ -143,6 +143,6 @@ volumes nomeados
 > docker run -v nodeVolume:/data
 > docker run -d -p 80:80 --name phpmessages_container -v phpvolume:/var/www/html/messages --rm phpmessages
 
-volume blind mounts, aponta para diretorio host
+volume bind mounts, aponta para diretorio host
 > docker run /dir/data:/data
 > docker run -d -p 80:80 --name phpmessages_container -v D:\Documentos\cursos\docker\2_volumes\messages:/var/www/html/messages --rm phpmessages
