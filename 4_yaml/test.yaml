@@ -1,6 +1,9 @@
+#Instrucoes para o programa rodar
 nome: "Theo"
 idade: 29
 
+
+#Objeto exemplo do projeto
 objeto:
   versao: 2
   arquivo: "teste.txt"
