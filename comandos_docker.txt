@@ -99,3 +99,33 @@ remover container apos utilizar (flag --rm)
 
 copiar arquivos entre containers (entre diretorio e container ou de um container para diretorio)
 . docker cp
+> docker cp node_diferente2:/app/app.js .\copia\
+
+verificar informacoes de processamento
+> docker top <container>
+
+verificar dados do container
+> dock isnpect <container>
+
+verificar os processos que estao rodando no container
+> docker stats
+
+############### DOCKER HUB ###################
+autenticacao no docker hub
+> docker login
+
+lougout
+> docker logout
+
+enviar imagem para o docker hub (PUSH)
+ - fazer o build
+   > docker build -t theosribeiro92/nodeteste .
+ - enviar para o docker hub
+   > docker push theosribeiro92/nodeteste
+
+capturar imagem do docker hub (PULL)
+> docker pull theosribeiro92/nodeteste
+
+inserir tag
+> docker build -t theosribeiro92/nodeteste:novaversao .
+> docker push theosribeiro92/nodeteste:novaversao
