@@ -7,3 +7,6 @@ idade: 29
 objeto:
   versao: 2
   arquivo: "teste.txt"
+
+versao: 3
+versao_completa: 3.15
