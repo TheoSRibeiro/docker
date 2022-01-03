@@ -130,7 +130,7 @@ inserir tag
 > docker build -t theosribeiro92/nodeteste:novaversao .
 > docker push theosribeiro92/nodeteste:novaversao
 
-######### VOLUMES ANONIMOS #########
+######### VOLUMES #########
 
 salvar dados no volume anonimo
 > docker run -v /data
@@ -146,3 +146,40 @@ volumes nomeados
 volume bind mounts, aponta para diretorio host
 > docker run /dir/data:/data
 > docker run -d -p 80:80 --name phpmessages_container -v D:\Documentos\cursos\docker\2_volumes\messages:/var/www/html/messages --rm phpmessages
+
+Bind mount - atualizar projeto
+> docker run -d -p 80:80 --name phpmessages_container -v D:\Documentos\cursos\docker\2_volumes\:/var/www/html/messages --rm phpmessages
+
+Criar um volume
+> docker volume create <nome>
+
+checar um voluma
+> docker volume inspect <nome>
+
+remover um volume
+> docker volume rm <nome>
+
+remover volumes nao utilizados
+> docker volume prune
+
+volume apenas de leitura
+> docker run -v volume:/data:ro
+> docker run -d -p 80:80 --name phpmessages_container -v volumeleitura:/var/www/html:ro --rm phpmessages
+
+
+######### NETWORKS #########
+
+lISTAR REDES
+> docker network ls
+
+CRIAR REDE padrao(bridge)
+> docker network create <nome>
+
+CRIAR REDE macvlan
+> docker network create -d macvlan meumacvlan
+
+REMOVER REDE
+> docker network rm <nome>
+
+REMOVER REDES EM MASSA - nao utiizadas
+> docker network prune
