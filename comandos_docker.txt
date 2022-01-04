@@ -217,3 +217,18 @@ desconectar um container a uma rede manualmente
 
 inspecionar redes
 > docker network inspect <nome>
+
+
+######### YAML #########
+
+instalar yaml no python
+> pip3 install pyyaml
+
+
+######### DOCKER COMPOSE #########
+
+rodar o compose
+> docker_compose up
+
+rodar compose em modo detached (flag -d)
+> docker_compose up -d
