@@ -232,3 +232,11 @@ rodar o compose
 
 rodar compose em modo detached (flag -d)
 > docker_compose up -d
+
+parar compose
+> docker compose down
+
+Criar mysql e flask
+build mysql e build flask
+> docker build -t mysqlcompose .
+> docker build -t flaskcompose .

@@ -1,4 +1,4 @@
-CREATE flaskdocker IF NOT EXISTS;
+CREATE DATABASE flaskdocker;
 USE flaskdocker;
 
 CREATE TABLE `flaskdocker`.`users`(
