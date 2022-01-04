@@ -240,3 +240,39 @@ Criar mysql e flask
 build mysql e build flask
 > docker build -t mysqlcompose .
 > docker build -t flaskcompose .
+
+verificar o que tem no compose
+>docker-compose ps
+
+
+######### DOCKER AWS #########
+
+apos baixar a chave e acessa-la, atualizar os pacotes:
+> sudo yum update -y
+
+instalar docker:
+> sudo yum install docker
+
+inicializar o docker
+> sudo service docker start
+
+visualizar os containers
+> sudo docker ps
+
+dar permissoes ao usuario ec2-user
+> sudo usermod -a -G docker ec2-user
+
+mostrar informacoes do docker
+> sudo docker info
+
+inicializar o swarm
+> sudo docker swarm init
+
+sair do swarm
+> sudo docker swarm leave -f
+
+visualizar os nos do docker swarm
+> docker node ls
+
+adicionar novos nodes
+> sudo docker swarm join --token <token> <ip>:<porta>
