@@ -2,11 +2,14 @@
 chmod 400 node1.pem
 
 #NODE1 - MANAGER
-ssh -i "node1.pem" ec2-user@ec2-18-228-24-132.sa-east-1.compute.amazonaws.com
+> ssh -i "node1.pem" ec2-user@ec2-18-228-24-132.sa-east-1.compute.amazonaws.com
 #NODE2
-ssh -i "node1.pem" ec2-user@ec2-18-231-198-19.sa-east-1.compute.amazonaws.com
+> ssh -i "node1.pem" ec2-user@ec2-18-231-198-19.sa-east-1.compute.amazonaws.com
 #NODE3
-ssh -i "node1.pem" ec2-user@ec2-54-232-42-36.sa-east-1.compute.amazonaws.com
+> ssh -i "node1.pem" ec2-user@ec2-54-232-42-36.sa-east-1.compute.amazonaws.com
 
+#TOKEN PARA JOIN NO SWARM
+> docker swarm join-token manager
+vai exibir o token abaixo
 #TOKEN JOIN SWARM
-sudo docker swarm join --token SWMTKN-1-5buy7kdjyir272jems6q1f1fw5bl5oh0cocvl4vn24iuc9ev12-41cb5tfzjynyc85amalii1zai 172.31.1.98:2377
+> sudo docker swarm join --token SWMTKN-1-5buy7kdjyir272jems6q1f1fw5bl5oh0cocvl4vn24iuc9ev12-41cb5tfzjynyc85amalii1zai 172.31.1.98:2377

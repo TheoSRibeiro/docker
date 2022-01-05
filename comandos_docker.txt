@@ -153,7 +153,7 @@ Bind mount - atualizar projeto
 Criar um volume
 > docker volume create <nome>
 
-checar um voluma
+checar um volume
 > docker volume inspect <nome>
 
 remover um volume
@@ -271,8 +271,106 @@ inicializar o swarm
 sair do swarm
 > sudo docker swarm leave -f
 
-visualizar os nos do docker swarm
+visualizar os nos(maquinas conectadas) do docker swarm
 > docker node ls
 
 adicionar novos nodes
 > sudo docker swarm join --token <token> <ip>:<porta>
+>sudo docker swarm join --token SWMTKN-1-5buy7kdjyir272jems6q1f1fw5bl5oh0cocvl4vn24iuc9ev12-41cb5tfzjynyc85amalii1zai 172.31.1.98:2377
+
+SUBINDO SERVICO DO SWARM
+
+iniciar o docker com advertencia e ip do NODE LIDER
+> docker swarm init --advertise-addr 18.228.24.132
+
+subir novo servico
+> docker service create --name <nome> <imagem>
+> docker service create --name nginxswarm -p 80:80 nginx
+
+listar servicos(projetos rodando) docker que estao rodando
+> docker service ls
+
+remover servicos
+> docker service rm <nome>
+
+replicando servico - aumentando o numero de replicas
+> docker service create --name <nome> --replicas <numero> <imagem>
+> docker service create --name nginxreplicas --replicas 3 -p 80:80 nginx
+
+verificar os dados no Node Worker
+> docker container ls
+
+remover container de um Node Worker
+> sudo docker container rm <nome> -f
+
+checkar token swarm join
+> docker swarm join-token manager
+
+checar swarm
+> docker info
+
+remover instancia do swarm
+> docker swarm leave -f
+
+removendo um node
+> docker node rm <id>
+
+reiniciar o node se cair
+- na pasta ~/.ssh/ fazer fazer um ping no servidor
+> vim ~/.ssh/config
+  - ServerAliveInterval 50
+
+inspecionar servicos
+> docker service inspect <id>
+
+verificar containers ativados pelo service
+> docker service ps <id>
+
+COMPOSE COM SWARM
+> docker stack deploy -c <arquivo.yaml> <nome>
+> sudo docker stack deploy -c docker-compose.yaml nginx_swarm
+
+adicionar replicas do stack
+> docker service scale <nome>=<replicas>
+> sudo docker service scale nginx_swarm_web=3
+
+verificar nodes ativos:
+>docker service ls
+
+fazer o servico nao receber mais tasks
+> docker node update --availability drain <id>
+> sudo docker node update --availability drain 2man1slysji5tcctjm9krkpn2
+
+fazer o servico voltar a receber mais tasks
+> docker node update --availability active <id>
+
+atualizar parametro dos nodes
+> docker service update --image <imagem><servico>
+> docker service update --image nginx:1.18.0 pqtrfo7xic6d
+
+REDE PARA SWARM
+
+criar rede
+> docker network create
+> docker network create --driver overlay swarm
+
+visualizar redes
+> docker network ls
+
+criar service
+> docker service create --name nginxreplicas --replicas 3 -p 8000:8000 --network swarm nginx
+
+verificar os servicos em pe
+> docker service ls
+
+ver os conntainer rodando
+> docker container ls
+
+verificar o status do container
+> docker container inspect <id>
+
+conectar um servico rodando a uma rede especifica 
+> docker service update --network <rede><id_service>
+
+checar o resultado com inspect
+> docker container inspect <id>
