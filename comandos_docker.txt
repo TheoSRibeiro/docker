@@ -370,7 +370,12 @@ verificar o status do container
 > docker container inspect <id>
 
 conectar um servico rodando a uma rede especifica 
-> docker service update --network <rede><id_service>
+> docker service update --network-add <rede><id_service>
 
 checar o resultado com inspect
 > docker container inspect <id>
+
+
+######### KUBERNETES #########
+
+Orquestracao de containers
