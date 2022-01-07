@@ -379,3 +379,25 @@ checar o resultado com inspect
 ######### KUBERNETES #########
 
 Orquestracao de containers
+
+Iniciando o Minikube
+> minikube start --driver=<driver>
+> minikube start --driver=docker
+
+testar minikube
+> minikube status
+
+parar minikube
+> minikube stop
+
+dashboard monikube
+> minikube dashboard
+
+mostrar url no terminal
+> minikube dashboard --url
+
+- criar projeto
+- criar Dockerfile
+- fazer o build (docker build -t theosribeiro92/flask-kub-projeto .)
+- rodar (docker run -d -p 5000:5000 --name flask-kub --rm theosribeiro92/flask-kub-projeto)
+
